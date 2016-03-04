@@ -12,5 +12,12 @@
         <li>hi</li>
       <% } %>
     </ul>
+    <script type="text/javascript">
+      window.onload = function () {
+        // 埋め込み先のiframeへ適切な高さを通知してやる
+        height = window.document.body.offsetHeight + 30;
+        parent.postMessage({height: height}, "*");
+      };
+    </script>
   </body>
 </html>
