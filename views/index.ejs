@@ -17,7 +17,8 @@
       window.onload = function () {
         // 埋め込み先のiframeへ適切な高さを通知してやる
         var height = window.document.body.offsetHeight + 30;
-        parent.postMessage({height: height, iframe_id: '<%= iframe_id %>'}, "*");
+        var data = JSON.stringify({height: height, id: '<%= iframe_id %>'});
+        parent.postMessage(data, "*");
       };
     </script>
   </body>
